@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeCollViewCell" customModule="RocketLaunchApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="287"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6On-pF-Q1A">
+                    <rect key="frame" x="4" y="4" width="416" height="273"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hju-K9-BON">
+                            <rect key="frame" x="0.0" y="0.0" width="416" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="F6u-5x-ARD"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7q-Fu-p4K">
+                            <rect key="frame" x="8" y="220" width="400" height="45"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSF-Xy-oy4">
+                            <rect key="frame" x="8" y="200" width="397" height="20"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="NNG-vS-M8N"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Hju-K9-BON" firstAttribute="leading" secondItem="6On-pF-Q1A" secondAttribute="leading" id="EWr-KQ-VLv"/>
+                        <constraint firstItem="Hju-K9-BON" firstAttribute="centerX" secondItem="X7q-Fu-p4K" secondAttribute="centerX" id="M4C-n8-t4e"/>
+                        <constraint firstItem="X7q-Fu-p4K" firstAttribute="top" secondItem="ZSF-Xy-oy4" secondAttribute="bottom" id="Yb2-aj-Tmv"/>
+                        <constraint firstItem="Hju-K9-BON" firstAttribute="top" secondItem="6On-pF-Q1A" secondAttribute="top" id="bN9-6C-BjA"/>
+                        <constraint firstItem="X7q-Fu-p4K" firstAttribute="leading" secondItem="6On-pF-Q1A" secondAttribute="leading" constant="8" id="d3j-oA-UJY"/>
+                        <constraint firstAttribute="trailing" secondItem="ZSF-Xy-oy4" secondAttribute="trailing" constant="11" id="ipN-NL-Qd3"/>
+                        <constraint firstItem="ZSF-Xy-oy4" firstAttribute="top" secondItem="Hju-K9-BON" secondAttribute="bottom" id="mvk-lW-xGw"/>
+                        <constraint firstItem="ZSF-Xy-oy4" firstAttribute="leading" secondItem="6On-pF-Q1A" secondAttribute="leading" constant="8" id="s0M-pf-tNd"/>
+                        <constraint firstAttribute="trailing" secondItem="X7q-Fu-p4K" secondAttribute="trailing" constant="8" id="sXL-aD-s78"/>
+                        <constraint firstAttribute="bottom" secondItem="X7q-Fu-p4K" secondAttribute="bottom" constant="8" id="vbT-Ip-N5K"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidthV">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColorV">
+                            <color key="value" white="0.039169520550000003" alpha="0.31905500860000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="6On-pF-Q1A" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="4" id="1gS-7N-AIJ"/>
+                <constraint firstAttribute="bottom" secondItem="6On-pF-Q1A" secondAttribute="bottom" constant="10" id="9FW-ia-GU1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6On-pF-Q1A" secondAttribute="trailing" constant="4" id="jDA-Xj-E0a"/>
+                <constraint firstItem="6On-pF-Q1A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="kfA-RU-TpJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imgView" destination="Hju-K9-BON" id="4tf-1V-Zez"/>
+                <outlet property="lblDescription" destination="ZSF-Xy-oy4" id="Fj3-FH-hjq"/>
+                <outlet property="lblTitle" destination="X7q-Fu-p4K" id="aTf-fO-e0q"/>
+            </connections>
+            <point key="canvasLocation" x="118.84057971014494" y="293.63839285714283"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
