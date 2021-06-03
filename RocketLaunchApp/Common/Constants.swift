@@ -24,8 +24,3 @@ struct CollCellIdentifier {
 struct NavigationTitle {
     static let HomeViewTitle = "Appolo"
 }
-
-//MARK: - Set Notification Observers
-extension Notification.Name {
-    static let networkStatusChange = Notification.Name("__networkStatusChangeNotification")
-}

@@ -140,11 +140,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == launchData!.count - 1 {
-            btnLoadMore.isEnabled = true
-        } else {
-            btnLoadMore.isEnabled = false
-        }
+        btnLoadMore.isEnabled = indexPath.row == launchData!.count - 1
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
