@@ -8,16 +8,20 @@ import UIKit
 import RxSwift
 import Action
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, Alertable {
     
     //MARK: - IBOutlets
     @IBOutlet weak var btnLoadMore: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var detailContainerView: UIView!
+    @IBOutlet weak var textView: UITextView!
     
     //MARK: - Variables
     private var vm: HomeVMType!
     private var disposeBag = DisposeBag()
     private var launchData: [Launches]?
+    private var selectedObj: Launches?
+    private var rocketData: Rocket?
     
     //MARK: - ViewControllet Lifecycle
     override func viewDidLoad() {
@@ -51,6 +55,10 @@ class HomeViewController: UIViewController {
             .subscribe(onNext: handleRocketLaunchData())
             .disposed(by: disposeBag)
         
+        vm.rocketData
+            .subscribe(onNext: handleRocketDetailsData())
+            .disposed(by: disposeBag)
+        
         vm.state.isCompleteByAction()
           .asDriver(onErrorJustReturn: nil)
           .drive(onNext: { [weak self] type in
@@ -62,7 +70,9 @@ class HomeViewController: UIViewController {
                 break
               case .fetchRocketDetail:
                 //show rocket details
-                print(self.vm.rocketData)
+                if let r = self.rocketData?.rocket, let name = r.name, let type = r.type, let desc = self.selectedObj?.mission?.name, let code = self.selectedObj?.site {
+                    self.textView.text = "\u{1F680} Name: \(name) \r\n\u{1F680} Type: \(type) \r\n\u{1F680} Code: \(code) \r\n\u{1F680} Desc: \(desc)"
+                }
               }
             }
           })
@@ -88,16 +98,22 @@ private extension HomeViewController {
             strongSelf.collectionView.reloadData()
         }
     }
+    func handleRocketDetailsData() -> ((Rocket?) -> Void)? {
+        return { [weak self] rocket in
+            guard let strongSelf = self, let rocket = rocket else { return }
+            strongSelf.rocketData = rocket
+        }
+    }
     func handleState() -> SingleResult<Bool> {
-      return { [weak self] isComplete in
-        guard let self = self, isComplete else { return }
+      return { isComplete in
+        //Get the completion state of the API call
       }
     }
 
     func handleError() -> SingleResult<Error?> {
       return { [weak self] error in
-        guard let self = self else { return }
-        
+        guard let self = self, let error = error else { return }
+        self.showAlert(message: error.localizedDescription)
       }
     }
 }
@@ -132,15 +148,24 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let launchId = launchData?[indexPath.item].id else {
+        guard let obj = launchData?[indexPath.item], let launchId = obj.id else {
             return
         }
+        self.selectedObj = obj
         let dto = FetchLaunchDetailsDTO.init(launchId: launchId)
+        UIView.animate(withDuration: 0.3) {
+            self.detailContainerView.alpha = 1.0
+        }
+        textView.text = "Loading rocket detail...\u{1F680} \u{1F680} \u{1F680}"
         vm.onLaunchDetails.execute(dto)
     }
-    
-}
 
-extension HomeViewController: Alertable {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if detailContainerView.alpha == 1.0 {
+            UIView.animate(withDuration: 0.3) {
+                self.detailContainerView.alpha = 0.0
+            }
+        }
+    }
     
 }

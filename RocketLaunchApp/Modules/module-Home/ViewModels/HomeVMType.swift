@@ -102,7 +102,7 @@ private extension HomeVM {
         let request = request.materialize().share(replay: 1)
         request.elements().do(onNext: { (rocket) in
             self.rocketRelay.accept(rocket)
-        }).mapTo(ActivityState.complete(item: .fetchLauncheDetail))
+        }).mapTo(ActivityState.complete(item: .fetchRocketDetail))
         .bind(to: stateRelay)
         .disposed(by: self.disposeBag)
         

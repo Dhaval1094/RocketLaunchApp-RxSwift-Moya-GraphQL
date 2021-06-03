@@ -41,10 +41,25 @@
                                     <outlet property="delegate" destination="oMh-sp-gl1" id="Fon-hZ-zat"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" id="nNZ-oB-B3F">
-                                <rect key="frame" x="0.0" y="81" width="414" height="734"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <view clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCp-4d-nBN">
+                                <rect key="frame" x="20" y="395" width="374" height="160"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Loading rocket detail..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nER-Ll-HBW">
+                                        <rect key="frame" x="10" y="10" width="354" height="140"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.50559182363013699" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="nER-Ll-HBW" secondAttribute="bottom" constant="10" id="CTE-MZ-tcN"/>
+                                    <constraint firstAttribute="height" constant="160" id="QOZ-Ej-3u5"/>
+                                    <constraint firstItem="nER-Ll-HBW" firstAttribute="top" secondItem="qCp-4d-nBN" secondAttribute="top" constant="10" id="m2B-sj-X4a"/>
+                                    <constraint firstAttribute="trailing" secondItem="nER-Ll-HBW" secondAttribute="trailing" constant="10" id="ytY-3U-8Zx"/>
+                                    <constraint firstItem="nER-Ll-HBW" firstAttribute="leading" secondItem="qCp-4d-nBN" secondAttribute="leading" constant="10" id="zB2-Gg-1Tn"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19d-8q-hMT">
                                 <rect key="frame" x="0.0" y="822" width="414" height="40"/>
@@ -59,18 +74,23 @@
                         <constraints>
                             <constraint firstItem="itu-T6-HFY" firstAttribute="leading" secondItem="KZ3-zJ-ayC" secondAttribute="leading" id="0RK-kq-2zs"/>
                             <constraint firstItem="KZ3-zJ-ayC" firstAttribute="trailing" secondItem="19d-8q-hMT" secondAttribute="trailing" id="Bw7-xK-giY"/>
+                            <constraint firstItem="qCp-4d-nBN" firstAttribute="leading" secondItem="KZ3-zJ-ayC" secondAttribute="leading" constant="20" id="F5o-Az-327"/>
+                            <constraint firstItem="KZ3-zJ-ayC" firstAttribute="trailing" secondItem="qCp-4d-nBN" secondAttribute="trailing" constant="20" id="Jga-TU-EWW"/>
                             <constraint firstItem="KZ3-zJ-ayC" firstAttribute="trailing" secondItem="itu-T6-HFY" secondAttribute="trailing" id="NLi-5f-Qz5"/>
                             <constraint firstItem="19d-8q-hMT" firstAttribute="bottom" secondItem="KZ3-zJ-ayC" secondAttribute="bottom" id="Qjn-nY-h0z"/>
                             <constraint firstItem="19d-8q-hMT" firstAttribute="leading" secondItem="KZ3-zJ-ayC" secondAttribute="leading" id="W0s-kL-qOh"/>
                             <constraint firstItem="19d-8q-hMT" firstAttribute="top" secondItem="itu-T6-HFY" secondAttribute="bottom" id="Wnt-QU-GwZ"/>
                             <constraint firstItem="itu-T6-HFY" firstAttribute="top" secondItem="KZ3-zJ-ayC" secondAttribute="top" id="jqB-Kz-NCm"/>
                             <constraint firstItem="KZ3-zJ-ayC" firstAttribute="bottom" secondItem="itu-T6-HFY" secondAttribute="bottom" constant="40" id="jum-ow-qYB"/>
+                            <constraint firstItem="qCp-4d-nBN" firstAttribute="centerY" secondItem="KZ3-zJ-ayC" secondAttribute="centerY" id="pjb-JG-B5N"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lNx-5g-V1K"/>
                     <connections>
                         <outlet property="btnLoadMore" destination="19d-8q-hMT" id="ymW-HL-mD2"/>
                         <outlet property="collectionView" destination="itu-T6-HFY" id="eH8-tI-orz"/>
+                        <outlet property="detailContainerView" destination="qCp-4d-nBN" id="qfD-nY-6mZ"/>
+                        <outlet property="textView" destination="nER-Ll-HBW" id="Of1-il-5BS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wuj-tQ-yxz" sceneMemberID="firstResponder"/>
@@ -97,6 +117,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
