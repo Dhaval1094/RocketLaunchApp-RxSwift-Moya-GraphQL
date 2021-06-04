@@ -43,22 +43,28 @@ class HomeViewController: UIViewController, Alertable {
     func bindVM() {
         
         btnLoadMore.rx.action = CocoaAction(workFactory: { () -> Observable<Void> in
+            //Cursor is for pagination
+            //On passing cursor API will fetch the next page
             guard let cursor = self.vm.lastCursor else {
                 return .empty()
             }
-            let dto = FetchMoreLaunchesDTO.init(cursor: cursor)
+            let dto = FetchMoreLaunchesDTO(cursor: cursor)
+            //API call for LoadMore
             self.vm.onLoadMoreData.execute(dto)
           return .empty()
         })
         
+        //Subscribe launchData for observe any changes to that object
         vm.launchData
             .subscribe(onNext: handleRocketLaunchData())
             .disposed(by: disposeBag)
         
+        //Subscribe rocketData for observe any changes to that object
         vm.rocketData
             .subscribe(onNext: handleRocketDetailsData())
             .disposed(by: disposeBag)
         
+        //For check the state of result after completion of event
         vm.state.isCompleteByAction()
           .asDriver(onErrorJustReturn: nil)
           .drive(onNext: { [weak self] type in
@@ -78,12 +84,13 @@ class HomeViewController: UIViewController, Alertable {
           })
           .disposed(by: disposeBag)
 
+        //For handling the error after completion of any event
         vm.error
           .asDriver(onErrorJustReturn: nil)
           .drive(onNext: handleError())
           .disposed(by: disposeBag)
         
-        //Call API
+        //Call LaunchData API
         vm.onGetLaunchData.execute()
         
     }
@@ -153,6 +160,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             self.detailContainerView.alpha = 1.0
         }
         textView.text = "Loading rocket detail...\u{1F680} \u{1F680} \u{1F680}"
+        //API call for fetch Rocket details
         vm.onLaunchDetails.execute(dto)
     }
 

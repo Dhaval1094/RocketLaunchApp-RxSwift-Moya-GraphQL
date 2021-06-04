@@ -29,8 +29,8 @@
 		881CC4D72664CA470012C253 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881CC4C62664CA470012C253 /* Cloud.swift */; };
 		881CC4D82664CA470012C253 /* CloudDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881CC4C72664CA470012C253 /* CloudDTOs.swift */; };
 		882C84572666B0DA007D40EC /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C84562666B0DA007D40EC /* Launch.swift */; };
-		882C845A2666B442007D40EC /* Clousers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C84592666B442007D40EC /* Clousers.swift */; };
 		88D190F32665266000CA8D03 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D190F22665266000CA8D03 /* Rocket.swift */; };
+		88D3B2B12669D73A00498C62 /* Clousers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2B02669D73A00498C62 /* Clousers.swift */; };
 		E02803ABA5D87FCB290A8B6A /* Pods_RocketLaunchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9B0A3B53B8AD940D33D278 /* Pods_RocketLaunchApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,8 +60,8 @@
 		881CC4C62664CA470012C253 /* Cloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		881CC4C72664CA470012C253 /* CloudDTOs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudDTOs.swift; sourceTree = "<group>"; };
 		882C84562666B0DA007D40EC /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
-		882C84592666B442007D40EC /* Clousers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clousers.swift; sourceTree = "<group>"; };
 		88D190F22665266000CA8D03 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		88D3B2B02669D73A00498C62 /* Clousers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clousers.swift; sourceTree = "<group>"; };
 		AF9C6008BEE1A5CFD0BB70E0 /* Pods-RocketLaunchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunchApp.debug.xcconfig"; path = "Target Support Files/Pods-RocketLaunchApp/Pods-RocketLaunchApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C151CF61703A9ABFAE803FD9 /* Pods-RocketLaunchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RocketLaunchApp.release.xcconfig"; path = "Target Support Files/Pods-RocketLaunchApp/Pods-RocketLaunchApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,9 +209,9 @@
 		881CC4BA2664CA470012C253 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				88D3B2B02669D73A00498C62 /* Clousers.swift */,
 				881CC4BB2664CA470012C253 /* Extensions */,
 				881CC4BF2664CA470012C253 /* Protocols */,
-				882C84592666B442007D40EC /* Clousers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -401,10 +401,10 @@
 				881CC4D62664CA470012C253 /* BaseService.swift in Sources */,
 				881CC4D42664CA470012C253 /* Nibloadable.swift in Sources */,
 				881CC4D32664CA470012C253 /* ReusableView.swift in Sources */,
+				88D3B2B12669D73A00498C62 /* Clousers.swift in Sources */,
 				881CC4CA2664CA470012C253 /* HomeCollViewCell.swift in Sources */,
 				881CC4C92664CA470012C253 /* HomeVMType.swift in Sources */,
 				881CC4942664C9420012C253 /* SceneDelegate.swift in Sources */,
-				882C845A2666B442007D40EC /* Clousers.swift in Sources */,
 				881CC4A82664C9AD0012C253 /* Constants.swift in Sources */,
 				882C84572666B0DA007D40EC /* Launch.swift in Sources */,
 				881CC4CC2664CA470012C253 /* HomeViewController.swift in Sources */,

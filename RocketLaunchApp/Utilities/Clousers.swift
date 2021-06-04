@@ -7,6 +7,10 @@
 
 import Foundation
 
+/*
+ This provides flexibility to use closures with different number of parameters and return type. Directly assign and use the closer in any class.
+ */
+
 // Empty Result + Void Return
 typealias EmptyResult<ReturnType> = () -> ReturnType
 
