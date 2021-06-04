@@ -9,6 +9,11 @@
 
 This is an example project for showing how to implement RxSwift, Moya and GraphQL based APIs. These three things togather provides awesome ViewModel based  structure. Apolo provides the webservice for fetching rocket and launch details. These webservices and UI components are updated with the observable events already provided by RxSwift.
 
+Three functional APIs are binded for these events.
+- Fetch the launch details
+- Fetch load more launch details, for pagination
+- Fetch selected Rocket details
+
 ![GIF](https://media.giphy.com/media/xzuBwdgJETtUpF8EAp/giphy.gif) 
 
 These are the pod details which are required to run the project.
