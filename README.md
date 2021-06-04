@@ -29,6 +29,13 @@ Action library is used with RxSwift to provide an abstraction on top of observab
 RxSwiftExt library provides additional convenience operators and Reactive Extensions.
 
 
+**REFERENCES:**
+
+https://github.com/Moya/Moya
+https://github.com/ReactiveX/RxSwift
+https://github.com/RxSwiftCommunity/Action
+https://github.com/RxSwiftCommunity/RxSwiftExt
+
 
 
 
