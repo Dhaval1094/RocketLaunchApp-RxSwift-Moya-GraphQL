@@ -7,7 +7,7 @@
 
 **GarphQL** - GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
 
-This is an example project for showing how to implement RxSwift, Moya and GraphQL based APIs. These three things togather provides awesome ViewModel based  structure. Apolo provides the webservice for fetching rocket and launch details. These webservices and UI components are updated with the observable events already provided by RxSwift.
+This is an example project for showing how to implement RxSwift, Moya and GraphQL based APIs. These three things together provide an awesome ViewModel-based structure. Apolo provides the webservice for fetching rocket and launch details. These webservices and UI components are updated with the observable events already provided by RxSwift.
 
 Three functional APIs are binded for these events.
 - Fetch the launch details
